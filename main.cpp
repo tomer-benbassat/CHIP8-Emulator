@@ -1,5 +1,8 @@
 #include "chip8.h"
 #include "platform.h"
+#include <thread>
+#include <chrono>
+
 
 int main() {
     Chip8 chip8;
