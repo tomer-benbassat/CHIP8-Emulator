@@ -1,0 +1,12 @@
+# Executables
+chip8
+
+# Object files
+*.o
+
+# Temporary files
+.vscode/
+.DS_Store
+
+# ROMs
+test_roms/
