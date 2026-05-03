@@ -78,7 +78,6 @@ void Chip8::loadROM(const std::string& filename) {
 void Chip8::cycle() {
     fetch();
     decodeAndExecute();
-    updateTimers();
 }
 
 
