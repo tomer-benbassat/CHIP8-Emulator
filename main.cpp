@@ -8,10 +8,10 @@ int main() {
     Chip8 chip8;
     Platform platform("CHIP-8 Emulator", 640, 320, 64, 32);
     
-    chip8.loadROM("test_roms/IBM Logo.ch8");
+    chip8.loadROM("test_roms/Pong.ch8");
 
     double accumulator_cpu = 0;
-    double accumulator_timer = 0;
+    double accumulator_timer = 0; 
 
     bool quit = false;
     while (!quit) {
