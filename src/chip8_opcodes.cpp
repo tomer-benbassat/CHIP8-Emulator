@@ -63,22 +63,28 @@ void Chip8::OP_8XY3() {
 }
 
 void Chip8::OP_8XY4() {
-    V[x] += V[y];
+    uint16_t sum = V[x] + V[y];
+    V[0xF] = sum > 255;
+    V[x] = sum & 0xFF;
 }
 
 void Chip8::OP_8XY5() {
-    V[x] -= V[y];
+    V[0xF] = V[x] >= V[y];
+    V[x] = V[x] - V[y];
 }
 
 void Chip8::OP_8XY6() {
+    V[0xF] = V[x] & 0x1;
     V[x] >>= 1;
 }
 
 void Chip8::OP_8XY7() {
+    V[0xF] = V[y] >= V[x];
     V[x] = V[y] - V[x];
 }
 
 void Chip8::OP_8XYE() {
+    V[0xF] = (V[x] >> 7) & 0x1;
     V[x] <<= 1;
 }
 

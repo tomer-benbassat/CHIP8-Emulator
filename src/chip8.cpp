@@ -44,6 +44,7 @@ Chip8::Chip8() {
     keypad.fill(0);
     opcode = 0;
     draw_flag = false;
+    std::srand(std::time(nullptr));
 
     for (unsigned int i=0 ; i<80 ; i++){
         memory[i] = chip8_fontset[i];
@@ -86,6 +87,7 @@ void Chip8::cycle() {
 void Chip8::fetch() {
     opcode = (memory[pc] << 8u) | memory[pc + 1];
     pc += 2;
+
 
     x = (opcode >> 8) & 0x0F;
     y = (opcode >> 4) & 0x0F;
